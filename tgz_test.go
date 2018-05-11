@@ -17,7 +17,7 @@ func TestExtractError(t *testing.T) {
 	}{
 		{
 			tgz:    "not-found",
-			errRgx: regexp.MustCompile("open not-found: no such file .*"),
+			errRgx: regexp.MustCompile("open not-found: (no such file|The system cannot find the file) .*"),
 		}, {
 			tgz:    "fixtures/invalid-gzip.tgz",
 			errRgx: regexp.MustCompile("gzip: invalid header"),
